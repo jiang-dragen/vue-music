@@ -19,9 +19,9 @@ const HttpManager = {
 
   // =======================> 收藏列表 API
   // 返回的指定用户ID收藏列表
-  getCollectionOfUser: (userId) => get(`collection/detail?userId=${userId}`),
+  getCollectionOfUser: (userId) => get(`collect/collectOfUserId?userId=${userId}`),
   // 删除收藏的歌曲
-  deleteCollection: (userId, songId) => get(`/collection/delete?userId=${userId}&&songId=${songId}`),
+  deleteCollection: (userId, songId) => get(`/collect/deleteByUserIdAndSongId?userId=${userId}&songId=${songId}`),
 
   // =======================> 评论列表 API
   // 获得指定歌曲ID的评论列表

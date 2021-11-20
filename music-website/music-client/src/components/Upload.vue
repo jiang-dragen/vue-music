@@ -36,12 +36,13 @@ export default {
   },
   methods: {
     uploadUrl () {
-      return `${this.$store.state.configure.HOST}/user/avatar/update?id=${this.userId}`
+      return `${this.$store.state.configure.HOST}/consumer/updateConsumerPic?id=${this.userId}`
     },
     handleAvatarSuccess (res, file) {
       if (res.code === 1) {
+        console.log(res)
         this.imageUrl = URL.createObjectURL(file.raw)
-        this.$store.commit('setAvator', res.avator)
+        this.$store.commit('setAvator', res.pic)
         this.$message({
           message: '修改成功',
           type: 'success'

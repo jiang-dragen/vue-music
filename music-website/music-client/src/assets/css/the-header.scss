@@ -74,7 +74,9 @@
 
 /*用户*/
 .header-right {
-  position: relative;
+  position: absolute;
+  right: 20px;
+  top: 15px;
   @include layout(center, center);
   #user {
     overflow: hidden;

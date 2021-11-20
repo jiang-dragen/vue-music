@@ -61,12 +61,12 @@ export default {
     getMsg (id) {
       HttpManager.getUserOfId(id)
         .then(res => {
-          this.username = res[0].username
-          this.getuserSex(res[0].sex)
-          this.birth = this.attachBirth(res[0].birth)
-          this.introduction = res[0].introduction
-          this.location = res[0].location
-          this.avator = res[0].avator
+          this.username = res.username
+          this.getuserSex(res.sex)
+          this.birth = this.attachBirth(res.birth)
+          this.introduction = res.introduction
+          this.location = res.location
+          this.avator = res.avator
         })
         .catch(err => {
           console.log(err)
@@ -98,7 +98,7 @@ export default {
     getCollectSongs (id) {
       HttpManager.getSongOfId(id)
         .then(res => {
-          this.collectList.push(res[0])
+          this.collectList.push(res)
         })
         .catch(err => {
           console.log(err)

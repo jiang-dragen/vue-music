@@ -96,8 +96,8 @@ export default {
     getSongList (id) {
       HttpManager.getSongOfId(id)
         .then(res => {
-          this.tableData.push(res[0])
-          this.tempDate.push(res[0])
+          this.tableData.push(res)
+          this.tempDate.push(res)
         })
         .catch(err => {
           console.log(err)
@@ -118,6 +118,13 @@ export default {
           console.log(err)
         })
       this.delVisible = false
+    },
+    delAll () {
+      for (let item of this.multipleSelection) {
+        this.handleDelete(item)
+        this.deleteRow(item)
+      }
+      this.multipleSelection = []
     }
   }
 }

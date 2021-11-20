@@ -81,7 +81,7 @@ export default {
       params.append('username', this.registerForm.username)
       params.append('password', this.registerForm.password)
       params.append('sex', this.registerForm.sex)
-      params.append('phone_num', this.registerForm.phoneNum)
+      params.append('phoneNum', this.registerForm.phoneNum)
       params.append('email', this.registerForm.email)
       params.append('birth', datetime)
       params.append('introduction', this.registerForm.introduction)

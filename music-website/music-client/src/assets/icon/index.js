@@ -1,3 +1,4 @@
+// 各种图标集合
 const ICON = {
   BOFANG: '#icon-bofang', // 播放
   ZANTING: '#icon-zanting', // 暂停

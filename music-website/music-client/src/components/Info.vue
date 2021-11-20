@@ -83,15 +83,15 @@ export default {
     getMsg (id) {
       HttpManager.getUserOfId(id)
         .then(res => {
-          this.registerForm.username = res[0].username
-          this.registerForm.password = res[0].password
-          this.registerForm.sex = res[0].sex
-          this.registerForm.phoneNum = res[0].phoneNum
-          this.registerForm.email = res[0].email
-          this.registerForm.birth = res[0].birth
-          this.registerForm.introduction = res[0].introduction
-          this.registerForm.location = res[0].location
-          this.registerForm.avator = res[0].avator
+          this.registerForm.username = res.username
+          this.registerForm.password = res.password
+          this.registerForm.sex = res.sex
+          this.registerForm.phoneNum = res.phoneNum
+          this.registerForm.email = res.email
+          this.registerForm.birth = res.birth
+          this.registerForm.introduction = res.introduction
+          this.registerForm.location = res.location
+          this.registerForm.avator = res.avator
         })
         .catch(err => {
           console.log(err)
@@ -108,7 +108,7 @@ export default {
       params.append('username', this.registerForm.username)
       params.append('password', this.registerForm.password)
       params.append('sex', this.registerForm.sex)
-      params.append('phone_num', this.registerForm.phoneNum)
+      params.append('phoneNum', this.registerForm.phoneNum)
       params.append('email', this.registerForm.email)
       params.append('birth', datetime)
       params.append('introduction', this.registerForm.introduction)
@@ -123,9 +123,11 @@ export default {
               title: '编辑成功',
               showClose: true
             })
+            // eslint-disable-next-line no-unused-vars
+            let _this = this
             setTimeout(function () {
-              this.$router.go(-1)
-            }, 2000)
+              _this.$router.go(-1)
+            }, 1200)
           } else {
             this.showSuccess = false
             this.showError = true

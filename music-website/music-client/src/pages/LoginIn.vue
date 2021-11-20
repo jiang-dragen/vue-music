@@ -82,13 +82,13 @@ export default {
               message: '登录成功',
               type: 'success'
             })
-            _this.setUserMsg(res.userMsg[0])
+            _this.setUserMsg(res.userMsg)
             _this.$store.commit('setLoginIn', true)
             setTimeout(function () {
               _this.changeIndex('首页')
               _this.$router.push({path: '/'})
-              _this.$router.go(0)
-            }, 2000)
+              // _this.$router.go(0)
+            }, 1200)
           } else {
             _this.notify('用户名或密码错误', 'error')
           }

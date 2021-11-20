@@ -96,8 +96,8 @@ export default {
     getUsers (id) {
       HttpManager.getUserOfId(id)
         .then(res => {
-          this.userPic.push(res[0].avator)
-          this.userName.push(res[0].username)
+          this.userPic.push(res.avator)
+          this.userName.push(res.username)
         })
         .catch(err => {
           console.log(err)

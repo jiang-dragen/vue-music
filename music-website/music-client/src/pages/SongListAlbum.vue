@@ -100,7 +100,7 @@ export default {
     getSongList (id) {
       HttpManager.getSongOfId(id)
         .then(res => {
-          this.songLists.push(res[0])
+          this.songLists.push(res)
         })
         .catch(err => {
           console.log(err)
@@ -129,7 +129,7 @@ export default {
               this.getRank(this.songListId)
               this.notify('评分成功', 'success')
             } else {
-              this.notify('评分失败', 'error')
+              this.notify('您已经评价过了', 'error')
             }
           })
           .catch(err => {
